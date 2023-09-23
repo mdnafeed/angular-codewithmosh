@@ -21,4 +21,17 @@
 {{tweet.likeCount}}
 </div>
 
+
+<div *ngIf="course.length > 0; then courseFound else noCourseFound">
+    
+</div>
+
+<ng-template #courseFound>
+    Course List Found
+</ng-template>
+<ng-template #noCourseFound>
+    No Course List Found
+</ng-template>
+
+
 <!-- <button (click)="childToParent()">Child to Parent</button> -->

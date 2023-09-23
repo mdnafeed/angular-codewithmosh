@@ -17,6 +17,8 @@ export class FavoriteComponent {
   @Input() tweet:any;
   @Output() click = new EventEmitter();
   
+  course = [21,4];
+
   constructor(){
   }
   

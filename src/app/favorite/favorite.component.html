@@ -1,0 +1,24 @@
+<p>{{isFavorite}}</p>
+
+<ul>
+    <li *ngFor="let user of users">{{user.name}}</li>
+</ul>
+<button (click)="show()">Parent to Child</button>
+
+<ng-content select=".heading">
+
+</ng-content>
+
+<ng-content select=".body">
+
+</ng-content>
+
+<div>
+    <div *ngIf="!tweet.likes" (click)="likesCount()" style="font-size:500%;">&#9829;</div>
+
+    <div><span *ngIf="tweet.likes" (click)="likesCount()" style="font-size:500%;color:red;">&hearts;</span></div>
+
+{{tweet.likeCount}}
+</div>
+
+<!-- <button (click)="childToParent()">Child to Parent</button> -->

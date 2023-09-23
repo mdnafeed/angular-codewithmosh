@@ -1,17 +1,21 @@
 <h1>{{title | summery : 160}}</h1>
 <p [textContent]="title" [class.active]="isActive"></p>
 
-<table border="1">
-  <tr>
-    <td>A</td>
-    <td>A</td>
-    <td>A</td>
-  </tr>
-  <tr>
-    <td [attr.colspan]="colSpan">A</td>
-    <td>A</td>
-  </tr>
-</table>
+<h2>{{ date | myCustomDate }}</h2>
+
 <input [(ngModel)]="email" />
 <p>{{ email | uppercase }}</p>
-<p>{{ date | date }}</p>
+<p>{{ date | myCustomDate }}</p>
+<app-favorite 
+  [is-favorite]="post.isFavorite" 
+  [users]="users"
+  [getUser]="getUserAlert"
+  (change)="isFavoriteChange($event)"
+  (click)="likeCount($event)"
+  [tweet]="tweet"
+  >
+
+  <ng-container class="heading">Hello & Welcome </ng-container>
+  <div class="body">Some content here...</div>
+
+</app-favorite>

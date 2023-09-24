@@ -18,6 +18,8 @@ export class FavoriteComponent {
   @Output() click = new EventEmitter();
   
   course = [21,4];
+  isSet:boolean = true;
+  courses:any;
 
   constructor(){
   }
@@ -44,5 +46,39 @@ export class FavoriteComponent {
         likeCount:  this.tweet.likes ? 0: 1
       }
     )
+  }
+
+  onLoadCourse(){
+    this.courses = [
+      {
+        id:1,
+        name:'Angular'
+      },
+      {
+        id:2,
+        name:'Node Js'
+      },
+      {
+        id:3,
+        name:'Vue Js'
+      }
+    ]
+  }
+  /**
+   * addNewCourse
+   */
+  public addNewCourse() {
+    
+    this.courses.push({id:4,name:"Javascript"})
+  }
+
+  courseLoad(index:number,course:any){
+    course ? course.id: undefined
+  }
+  
+  onDeleteCourse(course:any){
+    let index = this.courses.indexOf(course);
+
+    this.courses.splice(index,1);
   }
 }

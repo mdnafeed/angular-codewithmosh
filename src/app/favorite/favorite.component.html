@@ -33,5 +33,27 @@
     No Course List Found
 </ng-template>
 
+<h2  [class.course]="course">Hello and Welcome to Codeigsoft</h2>
 
-<!-- <button (click)="childToParent()">Child to Parent</button> -->
+
+<button (click)="onLoadCourse()">Load Course</button>
+<button (click)="addNewCourse()">Child to Parent</button>
+
+
+<ul>
+    <li *ngFor="let c of courses; TrackBy courseLoad">
+        {{ c.name }}
+        <button (click)="onDeleteCourse(course)" 
+        [ngClass]="{'course':isSet}"
+        >Delete course</button>
+
+        <!-- [ngClass]="{
+            'course':isSet
+        }" -->
+
+        <!-- [class.course]="isSet" -->
+    </li>
+</ul>
+
+<input type="text" appInputFormat [format]="'uppercase'">
+

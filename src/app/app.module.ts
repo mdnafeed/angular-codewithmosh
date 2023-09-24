@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SummeryPipe,
     CustomDatePipe,
-    FavoriteComponent
+    FavoriteComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,
